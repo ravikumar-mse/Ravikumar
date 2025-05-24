@@ -2,38 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ravikumar | Academic Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ravikumar | Academic Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+
   <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      line-height: 1.6;
-      background-color: #f9f9f9;
+      font-family: 'Open Sans', sans-serif;
+      background: #f5f7fa;
       color: #333;
+      line-height: 1.6;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
     h1, h2 {
+      font-family: 'Montserrat', sans-serif;
       color: #2c3e50;
     }
-    header {
-      border-bottom: 2px solid #ddd;
-      margin-bottom: 20px;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
     }
-    section {
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #007acc;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+
+    header {
+      text-align: center;
       margin-bottom: 40px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 20px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style: inside disc;
+      margin-bottom: 15px;
+      color: #444;
     }
     a {
       color: #007acc;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
     a:hover {
       text-decoration: underline;
+      color: #005f99;
+    }
+
+    /* Contact styling */
+    section.contact p {
+      font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 15px;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Ravikumar</h1>
-    <p>Metallurgical & Materials Engineering | IIT Madras</p>
+    <p><em>Metallurgical & Materials Engineering | IIT Madras</em></p>
   </header>
 
   <section>
@@ -57,10 +114,10 @@
     </ul>
   </section>
 
-  <section>
+  <section class="contact">
     <h2>Contact</h2>
-    <p>Email: est.ravikumar@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/ravikumar-s-7b2795281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin.com/in/ravikumar-s-7b2795281</a></p>
+    <p>Email: <a href="mailto:est.ravikumar@gmail.com">est.ravikumar@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ravikumar-s-7b2795281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">linkedin.com/in/ravikumar-s-7b2795281</a></p>
   </section>
 </body>
 </html>
