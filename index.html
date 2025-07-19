@@ -7,9 +7,11 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome for LinkedIn icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
-    /* Reset & base */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -22,8 +24,7 @@
       line-height: 1.6;
       padding: 40px 20px;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
     }
     h1, h2 {
       font-family: 'Montserrat', sans-serif;
@@ -41,7 +42,6 @@
       padding-bottom: 5px;
       margin-top: 40px;
     }
-
     header {
       text-align: center;
       margin-bottom: 40px;
@@ -67,13 +67,17 @@
       text-decoration: underline;
       color: #005f99;
     }
-
-    /* Contact styling */
     section.contact p {
       font-size: 1.1rem;
     }
 
-    /* Responsive */
+    .linkedin-icon {
+      font-size: 1.5rem;
+      margin-left: 10px;
+      color: #0077b5;
+      vertical-align: middle;
+    }
+
     @media (max-width: 600px) {
       body {
         padding: 20px 15px;
@@ -101,7 +105,7 @@
   <section>
     <h2>Education</h2>
     <ul>
-      <li><strong>IIT Madras</strong> — B.Tech in Metallurgical and Materials Engineering (2021–2025)</li>
+      <li><strong>IIT Madras</strong> — B.Tech in Materials Engineering (2021–2025) — <strong>CGPA: 8.12/10</strong></li>
       <li><strong>CeNSE, IISc</strong> — M.Tech in Semiconductor Technology (2025–2027)</li>
     </ul>
   </section>
@@ -109,15 +113,21 @@
   <section>
     <h2>Research Interests</h2>
     <ul>
-      <li>Microelectronic Fabrication</li>
-      <li>Computational Materials Science</li>
+      <li>Electronic Materials Fabrication</li>
+      <li>Materials Informatics</li>
     </ul>
   </section>
 
   <section class="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:est.ravikumar@gmail.com">est.ravikumar@gmail.com</a></p>
-    <a href="https://www.linkedin.com/in/ravikumar-s-7b2795281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <p>
+      LinkedIn: 
+      <a href="https://www.linkedin.com/in/ravikumar-s-7b2795281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
+        ravikumar-s
+        <i class="fab fa-linkedin linkedin-icon"></i>
+      </a>
+    </p>
   </section>
 </body>
 </html>
