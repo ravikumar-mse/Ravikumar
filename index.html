@@ -9,140 +9,116 @@
   * { box-sizing:border-box; margin:0; padding:0; }
   body { font-family:'Open Sans', sans-serif; background:#f5f7fa; color:#333; line-height:1.6; max-width:900px; margin:auto; padding:20px; }
 
-  /* Hero Section */
-  .hero {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    margin-bottom:40px;
-    padding:20px;
-    background:#eaf1fb;
-    border-radius:15px;
-  }
-  .hero-text h1 { font-family:'Montserrat', sans-serif; font-size:2.5rem; color:#2c3e50; }
-  .hero-text p { font-size:1.2rem; margin-top:10px; color:#555; }
-  .hero img { width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid #007acc; margin-top:10px; }
-
-  /* Tab buttons */
-  .tabs {
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    margin-bottom:30px;
-  }
-  .tab-btn {
-    flex:1 1 150px;
-    padding:15px;
-    background:#fff;
-    border-radius:12px;
+  /* Main Intro */
+  #main-intro {
     text-align:center;
-    font-weight:600;
-    color:#007acc;
-    cursor:pointer;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  }
+  #main-intro h1 { font-family:'Montserrat', sans-serif; font-size:2.5rem; margin-bottom:10px; }
+  #main-intro p { font-size:1.2rem; margin-bottom:20px; color:#555; }
+  #main-intro img { width:140px; height:140px; border-radius:50%; border:3px solid #007acc; margin-bottom:20px; }
+
+  /* Buttons */
+  .buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-bottom:30px; }
+  .buttons button {
+    padding:15px 25px; border:none; border-radius:12px;
+    background:#007acc; color:#fff; font-weight:600; cursor:pointer;
     transition:0.3s;
   }
-  .tab-btn:hover, .tab-btn.active { background:#007acc; color:#fff; }
+  .buttons button:hover { background:#005f99; }
 
-  /* Tab content */
-  .tab-content {
-    display:none;
-    padding:20px;
-    background:#fff;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.05);
-    margin-bottom:30px;
+  /* Sections (hidden by default) */
+  .section { display:none; padding:20px; background:#fff; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom:30px; }
+  .section h2 { font-family:'Montserrat', sans-serif; font-size:1.8rem; margin-bottom:15px; border-bottom:3px solid #007acc; padding-bottom:5px; }
+  .section p, .section ul { font-size:1.1rem; margin-bottom:15px; }
+  .section ul { list-style:inside disc; color:#444; }
+  .section a { color:#007acc; font-weight:600; text-decoration:none; }
+  .section a:hover { text-decoration:underline; }
+
+  /* Back Button */
+  .back-btn {
+    display:inline-block; margin-top:15px; padding:8px 15px;
+    background:#007acc; color:#fff; border-radius:10px; cursor:pointer;
+    transition:0.3s;
   }
-  .tab-content.active { display:block; }
-
-  section h2 { font-family:'Montserrat', sans-serif; font-size:1.8rem; margin-bottom:15px; border-bottom:3px solid #007acc; padding-bottom:5px; }
-  p, ul { font-size:1.1rem; margin-bottom:15px; }
-  ul { list-style:inside disc; color:#444; }
-  a { color:#007acc; text-decoration:none; font-weight:600; }
-  a:hover { text-decoration:underline; color:#005f99; }
-  .linkedin-icon { font-size:1.5rem; margin-left:10px; color:#0077b5; vertical-align:middle; }
+  .back-btn:hover { background:#005f99; }
 
   @media(max-width:768px){
-    .hero { flex-direction:column; text-align:center; }
-    .hero img { margin-top:20px; }
-    .tabs { flex-direction:column; }
-    .tab-btn { width:100%; }
+    #main-intro img { width:120px; height:120px; }
+    .buttons { flex-direction:column; }
+    .buttons button { width:100%; }
   }
 </style>
 </head>
 <body>
 
-<!-- Hero Section -->
-<div class="hero">
-  <div class="hero-text">
-    <h1>Ravikumar</h1>
-    <p>First-year M.Tech Student at CeNSE, IISc</p>
-  </div>
+<!-- Main Intro -->
+<div id="main-intro">
   <img src="profilepic.jpg" alt="Ravikumar">
+  <h1>Ravikumar</h1>
+  <p>First-year M.Tech Student at CeNSE, IISc</p>
+  <div class="buttons">
+    <button onclick="openSection('about')">About Me</button>
+    <button onclick="openSection('education')">Education</button>
+    <button onclick="openSection('cv')">CV</button>
+    <button onclick="openSection('research')">Research Interests</button>
+    <button onclick="openSection('contact')">Contact</button>
+  </div>
 </div>
 
-<!-- Tab Buttons -->
-<div class="tabs">
-  <div class="tab-btn active" onclick="openTab('about')">About Me</div>
-  <div class="tab-btn" onclick="openTab('education')">Education</div>
-  <div class="tab-btn" onclick="openTab('cv')">CV</div>
-  <div class="tab-btn" onclick="openTab('research')">Research Interests</div>
-  <div class="tab-btn" onclick="openTab('contact')">Contact</div>
-</div>
-
-<!-- Tab Contents -->
-<div id="about" class="tab-content active">
+<!-- Sections -->
+<div id="about" class="section">
   <h2>About Me</h2>
   <p>I’m passionate about materials science, semiconductors, and sustainable energy tech. Currently building a strong research foundation to pursue a PhD.</p>
+  <div class="back-btn" onclick="backToMain()">← Back</div>
 </div>
 
-<div id="education" class="tab-content">
+<div id="education" class="section">
   <h2>Education</h2>
   <ul>
     <li><strong>IIT Madras</strong> — B.Tech in Materials Engineering (2021–2025) — <strong>CGPA: 8.12/10</strong></li>
     <li><strong>CeNSE, IISc</strong> — M.Tech in Semiconductor Technology (2025–2027)</li>
   </ul>
+  <div class="back-btn" onclick="backToMain()">← Back</div>
 </div>
 
-<div id="cv" class="tab-content">
+<div id="cv" class="section">
   <h2>CV</h2>
   <p><a href="cv.pdf" target="_blank">Download my CV</a></p>
+  <div class="back-btn" onclick="backToMain()">← Back</div>
 </div>
 
-<div id="research" class="tab-content">
+<div id="research" class="section">
   <h2>Research Interests</h2>
   <ul>
     <li>Electronic Materials Fabrication</li>
     <li>Materials Informatics</li>
   </ul>
+  <div class="back-btn" onclick="backToMain()">← Back</div>
 </div>
 
-<div id="contact" class="tab-content">
+<div id="contact" class="section">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:est.ravikumar@gmail.com">est.ravikumar@gmail.com</a></p>
-  <p>Connect with me on LinkedIn:</p>
-  <a href="https://www.linkedin.com/in/ravikumar-s-7b2795281" target="_blank">
-  <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:40px;height:40px;">
-  </a>
+  <p>LinkedIn: 
+    <a href="https://www.linkedin.com/in/ravikumar-s-7b2795281" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:40px;height:40px;">
+    </a>
   </p>
+  <div class="back-btn" onclick="backToMain()">← Back</div>
 </div>
 
 <script>
-function openTab(tabId){
-  // hide all contents
-  const contents = document.querySelectorAll('.tab-content');
-  contents.forEach(c => c.classList.remove('active'));
-  
-  // deactivate all buttons
-  const buttons = document.querySelectorAll('.tab-btn');
-  buttons.forEach(b => b.classList.remove('active'));
-  
-  // show selected content
-  document.getElementById(tabId).classList.add('active');
-  
-  // activate the clicked button
-  event.currentTarget.classList.add('active');
+function openSection(id){
+  document.getElementById('main-intro').style.display = 'none'; // hide main
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(s => s.style.display = 'none'); // hide all sections
+  document.getElementById(id).style.display = 'block'; // show clicked section
+}
+
+function backToMain(){
+  document.getElementById('main-intro').style.display = 'block';
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(s => s.style.display = 'none');
 }
 </script>
 
